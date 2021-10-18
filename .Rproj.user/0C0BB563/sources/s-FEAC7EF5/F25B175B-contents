@@ -1,0 +1,329 @@
+---
+title: "Dark Web - Price Index 2021"
+output: 
+  flexdashboard::flex_dashboard:
+    social: [ "twitter"]
+    orientation: rows
+    vertical_layout: scroll
+    smooth_scroll: true
+    html_document:
+    theme:
+      version: 04
+      bg: "#3ADAC6"
+      fg: "#162031"
+      primary: "#3ADAC6"
+      navbar-bg: "#162031"
+      base_font:
+        google: "Play"
+      code_font:
+        google: "Open Sans"
+    navbar:
+      - { title: "DatavizAdventure", href: "https://datavizadventure.com", align: right}
+---
+
+```{r setup, include=FALSE}
+library(bslib)
+library(flexdashboard)
+library(tidyverse)
+library(readxl)
+library(scales)
+library(highcharter)
+
+#load data
+dark_web<-read_excel("Data/Dark Web Price Index 2021.xlsx", sheet = 1)
+
+```
+
+Row {data-width=1920}
+-----------------------------------------------------------------------
+
+### What is your personal information worth? (Average Price)
+
+```{r}
+dark_web%>%
+  group_by(Category)%>%
+  summarise(Avg = round(mean(Avg), digits = 2))%>%
+  arrange(-Avg)%>%
+      hchart(type = "bar",
+           hcaes(x = Category, y = Avg), name = "Average Cost", color = "#38F289") %>%
+    hc_yAxis(
+      title = list(text = ""),
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#666666"
+      )
+    ) %>%
+    hc_xAxis(title = list(text = ""), labels = list(
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#333333"
+      )
+    )) %>%  hc_legend(enabled = FALSE)
+
+```
+
+### 
+
+You wouldn’t know it by watching the news but several corporations and organizations have all been victims of cyber attacks and, until this point, 2020 and 2021 have been some of the worst years for cyber security, causing tons of information ending up on sale on the dark web.
+
+In the following dashboard you can explore the **Dark Web Price Index 2020** report, created by [Privacy Affairs](https://www.privacyaffairs.com). See how much your personal information is worth and why you should protect it.
+
+Info reflects data updated on September 9 2021.
+
+Original Article: [Dark Web Price Index 2021](https://www.privacyaffairs.com/dark-web-price-index-2021/)
+
+Tableau tutorial: [Andy Kriebel](https://www.youtube.com/watch?v=Uq5EHn6bc8M)
+
+Suggested By: Lindsay Betzendahl | [ZenDollData](https://twitter.com/ZenDollData)
+
+Data Source: [Privacy Affairs](https://www.privacyaffairs.com/dark-web-price-index-2021/)   |   [MakeOverMonday Week 38](https://www.makeovermonday.co.uk/data/)
+
+
+Row {data-width=1920}
+-----------------------------------------------------------------------
+
+### Forged Documents – Physical
+
+```{r}
+dark_web%>%
+  filter(Category=="Forged Documents – Physical")%>%
+    hchart(type = "bar",
+           hcaes(x = Product, y = Avg), name = "Cost", color = "#CE47FF") %>%
+    hc_yAxis(
+      title = list(text = ""),
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#666666"
+      )
+    ) %>%
+    hc_xAxis(title = list(text = ""), labels = list(
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#333333"
+      )
+    )) %>%  hc_legend(enabled = FALSE)
+```
+
+### Malware
+
+```{r}
+dark_web%>%
+  filter(Category=="Forged Documents – Physical")%>%
+    hchart(type = "bar",
+           hcaes(x = Product, y = Avg), name = "Cost", color = "#CE47FF") %>%
+    hc_yAxis(
+      title = list(text = ""),
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#666666"
+      )
+    ) %>%
+    hc_xAxis(title = list(text = ""), labels = list(
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#333333"
+      )
+    )) %>%  hc_legend(enabled = FALSE)
+```
+
+### Crypto Accounts
+
+```{r}
+dark_web%>%
+  filter(Category=="Crypto Accounts")%>%
+    hchart(type = "bar",
+           hcaes(x = Product, y = Avg), name = "Cost", color = "#CE47FF") %>%
+    hc_yAxis(
+      title = list(text = ""),
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#666666"
+      )
+    ) %>%
+    hc_xAxis(title = list(text = ""), labels = list(
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#333333"
+      )
+    )) %>%  hc_legend(enabled = FALSE)
+```
+
+### DDOS Attacks
+
+```{r}
+dark_web%>%
+  filter(Category=="DDOS Attacks")%>%
+    hchart(type = "bar",
+           hcaes(x = Product, y = Avg), name = "Cost", color = "#CE47FF") %>%
+    hc_yAxis(
+      title = list(text = ""),
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#666666"
+      )
+    ) %>%
+    hc_xAxis(title = list(text = ""), labels = list(
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#333333"
+      )
+    )) %>%  hc_legend(enabled = FALSE)
+```
+
+### Payment processing services
+
+```{r}
+dark_web%>%
+  filter(Category=="Payment processing services")%>%
+    hchart(type = "bar",
+           hcaes(x = Product, y = Avg), name = "Cost", color = "#CE47FF") %>%
+    hc_yAxis(
+      title = list(text = ""),
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#666666"
+      )
+    ) %>%
+    hc_xAxis(title = list(text = ""), labels = list(
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#333333"
+      )
+    )) %>%  hc_legend(enabled = FALSE)
+```
+
+Row {data-width=1920}
+-----------------------------------------------------------------------
+
+### Hacked Services
+
+```{r}
+dark_web%>%
+  filter(Category=="Hacked Services")%>%
+    hchart(type = "bar",
+           hcaes(x = Product, y = Avg), name = "Cost", color = "#9588E7") %>%
+    hc_yAxis(
+      title = list(text = ""),
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#666666"
+      )
+    ) %>%
+    hc_xAxis(title = list(text = ""), labels = list(
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#333333"
+      )
+    )) %>%  hc_legend(enabled = FALSE)
+```
+
+### Credit Card Data
+
+```{r}
+dark_web%>%
+  filter(Category=="Credit Card Data")%>%
+    hchart(type = "bar",
+           hcaes(x = Product, y = Avg), name = "Cost", color = "#9588E7") %>%
+    hc_yAxis(
+      title = list(text = ""),
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#666666"
+      )
+    ) %>%
+    hc_xAxis(title = list(text = ""), labels = list(
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#333333"
+      )
+    )) %>%  hc_legend(enabled = FALSE)
+```
+
+### Forged Documents – Scans
+
+```{r}
+dark_web%>%
+  filter(Category=="Forged Documents – Scans")%>%
+    hchart(type = "bar",
+           hcaes(x = Product, y = Avg), name = "Cost", color = "#9588E7") %>%
+    hc_yAxis(
+      title = list(text = ""),
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#666666"
+      )
+    ) %>%
+    hc_xAxis(title = list(text = ""), labels = list(
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#333333"
+      )
+    )) %>%  hc_legend(enabled = FALSE)
+```
+
+### Email Database Dumps
+
+```{r}
+dark_web%>%
+  filter(Category=="Email Database Dumps")%>%
+    hchart(type = "bar",
+           hcaes(x = Product, y = Avg), name = "Cost", color = "#9588E7") %>%
+    hc_yAxis(
+      title = list(text = ""),
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#666666"
+      )
+    ) %>%
+    hc_xAxis(title = list(text = ""), labels = list(
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#333333"
+      )
+    )) %>%  hc_legend(enabled = FALSE)
+```
+
+### Social Media
+
+```{r}
+dark_web%>%
+  filter(Category=="Social Media")%>%
+    hchart(type = "bar",
+           hcaes(x = Product, y = Avg), name = "Cost", color = "#9588E7") %>%
+    hc_yAxis(
+      title = list(text = ""),
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#666666"
+      )
+    ) %>%
+    hc_xAxis(title = list(text = ""), labels = list(
+      style = list(
+        fontFamily = "Oswald",
+        fontSize = "12px",
+        color = "#333333"
+      )
+    )) %>%  hc_legend(enabled = FALSE)
+```
+

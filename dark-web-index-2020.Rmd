@@ -45,7 +45,7 @@ dark_web%>%
   summarise(Avg = round(mean(Avg), digits = 2))%>%
   arrange(-Avg)%>%
       hchart(type = "bar",
-           hcaes(x = Category, y = Avg), name = "Average Cost", color = "#38F289") %>%
+           hcaes(x = Category, y = Avg), name = "Average Cost ($)", color = "#38F289") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(
@@ -90,7 +90,7 @@ Row {data-width=1920}
 dark_web%>%
   filter(Category=="Forged Documents – Physical")%>%
     hchart(type = "bar",
-           hcaes(x = Product, y = Avg), name = "Cost", color = "#CE47FF") %>%
+           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#CE47FF") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(
@@ -114,7 +114,7 @@ dark_web%>%
 dark_web%>%
   filter(Category=="Forged Documents – Physical")%>%
     hchart(type = "bar",
-           hcaes(x = Product, y = Avg), name = "Cost", color = "#CE47FF") %>%
+           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#CE47FF") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(
@@ -138,7 +138,7 @@ dark_web%>%
 dark_web%>%
   filter(Category=="Crypto Accounts")%>%
     hchart(type = "bar",
-           hcaes(x = Product, y = Avg), name = "Cost", color = "#CE47FF") %>%
+           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#CE47FF") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(
@@ -162,7 +162,7 @@ dark_web%>%
 dark_web%>%
   filter(Category=="DDOS Attacks")%>%
     hchart(type = "bar",
-           hcaes(x = Product, y = Avg), name = "Cost", color = "#CE47FF") %>%
+           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#CE47FF") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(
@@ -186,7 +186,7 @@ dark_web%>%
 dark_web%>%
   filter(Category=="Payment processing services")%>%
     hchart(type = "bar",
-           hcaes(x = Product, y = Avg), name = "Cost", color = "#CE47FF") %>%
+           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#CE47FF") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(
@@ -213,7 +213,7 @@ Row {data-width=1920}
 dark_web%>%
   filter(Category=="Hacked Services")%>%
     hchart(type = "bar",
-           hcaes(x = Product, y = Avg), name = "Cost", color = "#9588E7") %>%
+           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#9588E7") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(
@@ -237,7 +237,7 @@ dark_web%>%
 dark_web%>%
   filter(Category=="Credit Card Data")%>%
     hchart(type = "bar",
-           hcaes(x = Product, y = Avg), name = "Cost", color = "#9588E7") %>%
+           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#9588E7") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(
@@ -261,7 +261,7 @@ dark_web%>%
 dark_web%>%
   filter(Category=="Forged Documents – Scans")%>%
     hchart(type = "bar",
-           hcaes(x = Product, y = Avg), name = "Cost", color = "#9588E7") %>%
+           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#9588E7") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(
@@ -285,7 +285,7 @@ dark_web%>%
 dark_web%>%
   filter(Category=="Email Database Dumps")%>%
     hchart(type = "bar",
-           hcaes(x = Product, y = Avg), name = "Cost", color = "#9588E7") %>%
+           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#9588E7") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(
@@ -309,7 +309,7 @@ dark_web%>%
 dark_web%>%
   filter(Category=="Social Media")%>%
     hchart(type = "bar",
-           hcaes(x = Product, y = Avg), name = "Cost", color = "#9588E7") %>%
+           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#9588E7") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(

@@ -2,7 +2,7 @@
 title: "Dark Web - Price Index 2021"
 output: 
   flexdashboard::flex_dashboard:
-    social: [ "twitter"]
+    social: ["twitter"]
     orientation: rows
     vertical_layout: scroll
     smooth_scroll: true

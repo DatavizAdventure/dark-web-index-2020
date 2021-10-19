@@ -80,6 +80,8 @@ Suggested By: Lindsay Betzendahl | [ZenDollData](https://twitter.com/ZenDollData
 
 Data Source: [Privacy Affairs](https://www.privacyaffairs.com/dark-web-price-index-2021/)   |   [MakeOverMonday Week 38](https://www.makeovermonday.co.uk/data/)
 
+Me: [Instagram](https://www.instagram.com/datavizadventure/)   |   [Behance](https://www.behance.net/enriquemendoza5)
+
 
 Row {data-width=1920}
 -----------------------------------------------------------------------
@@ -156,6 +158,9 @@ dark_web%>%
     )) %>%  hc_legend(enabled = FALSE)
 ```
 
+Row {data-width=1920}
+-----------------------------------------------------------------------
+
 ### DDOS Attacks
 
 ```{r}
@@ -204,8 +209,6 @@ dark_web%>%
     )) %>%  hc_legend(enabled = FALSE)
 ```
 
-Row {data-width=1920}
------------------------------------------------------------------------
 
 ### Hacked Services
 
@@ -213,7 +216,7 @@ Row {data-width=1920}
 dark_web%>%
   filter(Category=="Hacked Services")%>%
     hchart(type = "bar",
-           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#9588E7") %>%
+           hcaes(x = Product, y = Avg), name = "Cost ($)", color = "#CE47FF") %>%
     hc_yAxis(
       title = list(text = ""),
       style = list(
@@ -230,6 +233,9 @@ dark_web%>%
       )
     )) %>%  hc_legend(enabled = FALSE)
 ```
+
+Row {data-width=1920}
+-----------------------------------------------------------------------
 
 ### Credit Card Data
 
@@ -302,6 +308,7 @@ dark_web%>%
       )
     )) %>%  hc_legend(enabled = FALSE)
 ```
+
 
 ### Social Media
 
